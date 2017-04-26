@@ -1,0 +1,8 @@
+tuhdo.github.io/c-ide.html#sec-2
+C/C++ Development Environment for Emacs
+
+company-mode.github.io
+auto-complete tools for emacs
+
+https://www.v2ex.com/t/235523
+An article introducing using emacs to read code
