@@ -11,8 +11,8 @@ Then find "company" in the buffer. Enter the entry you can find a button "Instal
 
 Config
 
-It seems that company mode is depend on a backend software like clang or semantic. It's a bit tough to install clang for company mode
-and emacs has its built-in semantic. So we can just forget clang and use semantic.
+It seems that company mode is depend on a backend software like clang or semantic. Emacs has built-in semantic but no clang. It seems
+that company-mode can work well with semantic, so we just forget about clang now.
 
 To enable company mode in every buffer, you can use
 
@@ -31,11 +31,7 @@ Company mode depends on semantic mode. So we have to add
 in .emacs or inti file too.
 
 Now company mode will automatically run "company-clang" for c/c++ files. Since we don't have clang installed, this command will simply 
-result in failure. We have to manually type
-
-M-x company-semantic
-
-to parse the source code. I will figure out how to fix this problem later.
+result in failure. Emacs will report this but it won't cause any problem now.
 
 Now with company-mode set-up, we can see the efftor we have made. Now when you are typing, the company-mode will show you a candidate
 list for completion. You can use M-p or M-n to move up and down respectivelly. It seems the default setting is to use Enter to insert
