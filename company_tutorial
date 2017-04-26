@@ -1,0 +1,44 @@
+This article documents how to install and config company in emacs.
+
+Install
+
+To install company, just use emacs built-in functionality.
+Type 
+
+M-x list-packages
+
+Then find "company" in the buffer. Enter the entry you can find a button "Install" and it will handle anything about installation.
+
+Config
+
+It seems that company mode is depend on a backend software like clang or semantic. It's a bit tough to install clang for company mode
+and emacs has its built-in semantic. So we can just forget clang and use semantic.
+
+To enable company mode in every buffer, you can use
+
+M-x global-company-mode
+
+Or just add
+
+(add-hook 'after-init-hook 'global-company-mode)
+
+in your .emacs or your own init file.
+
+Company mode depends on semantic mode. So we have to add 
+
+(semantic-mode 1)
+
+in .emacs or inti file too.
+
+Now company mode will automatically run "company-clang" for c/c++ files. Since we don't have clang installed, this command will simply 
+result in failure. We have to manually type
+
+M-x company-semantic
+
+to parse the source code. I will figure out how to fix this problem later.
+
+Now with company-mode set-up, we can see the efftor we have made. Now when you are typing, the company-mode will show you a candidate
+list for completion. You can use M-p or M-n to move up and down respectivelly. It seems the default setting is to use Enter to insert
+the completion content while most of us are used to use TAB. I will find out how to change the settings too.
+
+That's all for now.
