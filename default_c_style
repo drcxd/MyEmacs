@@ -1,0 +1,6 @@
+To set your default c/c++ style, add
+
+(add-hook 'c-mode-common-hook (lambda() (c-set-style "bsd")))
+(add-hook 'c++-mode-common-hook (lambda() (c-set-style "bsd")))
+
+in your .emacs or init file.
