@@ -1,0 +1,12 @@
+To hide or show code, we can use
+
+M-x hs-minor-mode
+
+Here are some useful command from GNU Emacs Manual:
+
+Hide current block: M-x hs-hide-block
+Show current block: M-x hs-show-block
+Either hide or show current block: M-x hs-toggle-hiding
+
+Hide all top level blocks: M-x hs-hide-all
+show all top level blocks: M-x hs-show-all
