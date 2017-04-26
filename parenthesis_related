@@ -1,0 +1,23 @@
+To auto complete parenthesis, curly braces, bracket, use
+
+M-x electric-pair-mode
+
+or add 
+
+(electric-pair-mode t)
+
+in your .emacs or other init file.
+
+
+To highlight the matching parenthesis, curly braces, brackets, use
+
+M-x show-paren-mode
+
+or add
+
+(show-paren-mode 1)
+
+in your .emacso r other init file.
+
+See more information:
+https://www.emacswiki.org/emacs/ShowParenMode
