@@ -21,3 +21,15 @@ in your .emacso r other init file.
 
 See more information:
 https://www.emacswiki.org/emacs/ShowParenMode
+
+The following function will show you the content of the line which matching parenthesis belong to. However, after this function works,
+emacs will report an error. I don't know elisp, so I can't figure out what is going wrong here. If some one know the reason, tell me.
+
+(defadvice show-paren-function
+    (after show-matching-paren-offscreen activate)
+  (interactive)
+  (let* ((cb (char-before (point)))
+	 (matching-text (and cb
+			     (char-equal (char-syntax cb) ?\) )
+			     (blink-matching-open))))
+    (when matching-text (message matching-text))))
