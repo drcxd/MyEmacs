@@ -10,3 +10,7 @@ Either hide or show current block: M-x hs-toggle-hiding
 
 Hide all top level blocks: M-x hs-hide-all
 show all top level blocks: M-x hs-show-all
+
+Automatically open hs-minor-mode when in c/c++ mode:
+
+(add-hook 'c-mode-common-hook 'hs-minor-mode)
