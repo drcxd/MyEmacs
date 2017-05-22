@@ -24,6 +24,12 @@ Or just add
 
 in your .emacs or your own init file.
 
+If you just want use company mode while you're programming, then add
+
+(add-hook 'c-mode-common-hook 'company-mode)
+
+in your .emacs or your own init file. I write c/c++ code, so I use 'c-mode-common-hook, you can change this to what you want.
+
 Company mode depends on semantic mode. So we have to add 
 
 (semantic-mode 1)
