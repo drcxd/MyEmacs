@@ -44,3 +44,19 @@ list for completion. You can use M-p or M-n to move up and down respectivelly. I
 the completion content while most of us are used to use TAB. I will find out how to change the settings too.
 
 That's all for now.
+
+Here is some codes that make your company mode response faster.
+
+(setq company-dabbrev-downcase 0)
+(setq company-idle-delay 0) ;; some one says taht this line will waste your cpu, so be cautious
+(defun tab-indent-or-complete () ;; I haven't used this function, just document it here
+  (interactive)
+  (if (minibufferp)
+      (minibuffer-complete)
+    (if (or (not yas-minor-mode)
+            (null (do-yas-expand)))
+        (if (check-expansion)
+            (company-complete-common)
+          (indent-for-tab-command)))))
+
+(global-set-key [backtab] 'tab-indent-or-complete)
