@@ -1,0 +1,75 @@
+(add-to-list 'load-path "~/.emacs.d/elpa/ggtags-0.8.12")
+(add-to-list 'load-path "~/.emacs.d/elpa/company-0.9.3")
+(add-to-list 'load-path "~/.emacs.d/elpa/company-c-headers-20170531.1330")
+(add-to-list 'load-path "~/.emacs.d")
+
+;; ===========================melpa=================================
+(require 'package)
+(add-to-list 'package-archives
+	     '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
+
+;; ============================global================================
+;; this need gnu global installed
+(require 'ggtags)
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
+              (ggtags-mode 1))))
+
+(define-key ggtags-mode-map (kbd "C-c g s") 'ggtags-find-other-symbol)
+(define-key ggtags-mode-map (kbd "C-c g h") 'ggtags-view-tag-history)
+(define-key ggtags-mode-map (kbd "C-c g r") 'ggtags-find-reference)
+(define-key ggtags-mode-map (kbd "C-c g f") 'ggtags-find-file)
+(define-key ggtags-mode-map (kbd "C-c g c") 'ggtags-create-tags)
+(define-key ggtags-mode-map (kbd "C-c g u") 'ggtags-update-tags)
+
+(define-key ggtags-mode-map (kbd "M-,") 'pop-tag-mark)
+
+(setq-local imenu-create-index-function #'ggtags-build-imenu-index)
+;; ===========================sr-speedbar=============================
+;; this need sr-speedbar.el
+(require 'sr-speedbar)
+;; ============================ede=====================================
+(require 'ede)
+(global-ede-mode)
+;; ==================================semantic===========================
+(require 'cc-mode)
+(require 'semantic)
+(semantic-mode 1)
+(global-semanticdb-minor-mode 1)
+(global-semantic-idle-scheduler-mode 1)
+;; used for navigation and complete
+(semantic-add-system-include "/usr/include/c++/4.8.2")
+;; ============================company-mode===============================
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+(setq company-dabbrev-downcase 0)
+;; (setq company-backends (delete 'company-semantic company-backends))
+;; (define-key c-mode-map [(tab)] 'company-complete)
+;; (define-key c++-mode-map [(tab)] 'company-complete)
+;; header complete module
+(require 'company-c-headers)
+(add-to-list 'company-backends 'company-c-headers)
+;; used for header complete
+(add-to-list 'company-c-headers-path-system "/usr/include/c++/4.8.2")
+;; ========================close auto backup=================================
+;; close auto backup
+(setq make-backup-files nil)
+;; ==========================parenthesis related=============================
+;; parenthesis
+(show-paren-mode t) ;; this will highlight the matching parentheis when your cursor is on a parenthesis.
+(electric-pair-mode t) ;; this will automatically generate the right half parenthesis when you write the left half. This mode have other behavors, discover them.
+
+;; the following fucntion will show the content of the line which the matching parenthesis belonged to when the parenthesis is not in current screen. The function works, but will cause an error. I don't know elisps, so I can't figure out why.
+(defadvice show-paren-function
+    (after show-matching-paren-offscreen activate)
+  (interactive)
+  (let* ((cb (char-before (point)))
+	 (matching-text (and cb
+			     (char-equal (char-syntax cb) ?\) )
+			     (blink-matching-open))))
+    (when matching-text (message matching-text))))
+;; =======================hs-mode===========================================
+;; automatically open hs-minor-mode when editing a c/c++ source code
+(add-hook 'c-mode-common-hook 'hs-minor-mode)
