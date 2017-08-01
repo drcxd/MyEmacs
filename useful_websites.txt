@@ -6,3 +6,6 @@ auto-complete tools for emacs
 
 https://www.v2ex.com/t/235523
 An article introducing using emacs to read code
+
+https://github.com/emacs-helm/helm/wiki#install
+Helm mode
