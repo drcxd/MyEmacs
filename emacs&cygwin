@@ -1,0 +1,6 @@
+put this in .bashrc in your cygwin context to fix
+the shell output messed-up problem
+
+export PS1="\e[0;31m[\u@\h \W]\$ \e[m "
+
+----------------------------------------------------
