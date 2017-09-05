@@ -1,5 +1,0 @@
-Emacs will counter network error on windows when you want to install some packages from
-Melpa or GNU.
-To resolve this problem, download an available verson of gnutls and a w64 version of 
-emacs. Then put the bin directory of both together.
-Then the emacs command "package-list-packages" should work.

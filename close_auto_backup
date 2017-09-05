@@ -1,9 +1,0 @@
-By default, emacs will make a copy of the old version of your file when you modify it. Thus it will generate lots of *~ in your directory.
-At the worst case, your file will occupy twice large room in your disk.
-
-Althou the backup function may be useful sometime, I think most people would like to close it for a clean directory.
-Add
-
-(setq make-backup-files nil)
-
-in your .emacs or init file to close the auto backup functionality.

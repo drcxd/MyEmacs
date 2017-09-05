@@ -1,0 +1,61 @@
+[[[[[[[[[[[[[[[[[[[[[[[close auto backup]]]]]]]]]]]]]]]]]]]]]]]
+
+By default, emacs will make a copy of the old version of your file
+when you modify it. Thus it will generate lots of *~ in your
+directory.  At the worst case, your file will occupy twice large room
+in your disk.
+
+Although the backup function may be useful sometime, I think most
+people would like to close it for a clean directory.
+
+(setq make-backup-files nil)
+
+[[[[[[[[[[[[[[[[[[[[[[[ default c style ]]]]]]]]]]]]]]]]]]]]]]]
+
+(add-hook 'c-mode-common-hook (lambda() (c-set-style "bsd")))
+(add-hook 'c++-mode-common-hook (lambda() (c-set-style "bsd"))
+
+[[[[[[[[[[[[[[[[[[[[[[[ emacs in cygwin ]]]]]]]]]]]]]]]]]]]]]]]
+
+put this in .bashrc in your cygwin context to fix the shell output
+messed-up problem
+
+export PS1="\e[0;31m[\u@\h \W]\$ \e[m "
+
+[[[[[[[[[[[[[[[[[[[[[[[ hs minor mode ]]]]]]]]]]]]]]]]]]]]]]]
+
+Automatically open hs-minor-mode when in c/c++ mode:
+
+(add-hook 'c-mode-common-hook 'hs-minor-mode)
+
+[[[[[[[[[[[[[[[[[[[[[[[ parenthesis ]]]]]]]]]]]]]]]]]]]]]]]
+
+To auto complete parenthesis, curly braces, bracket, use
+
+(electric-pair-mode t)
+
+To highlight the matching parenthesis, curly braces, brackets, use
+
+(show-paren-mode 1)
+
+The following function will show you the content of the line which
+matching parenthesis belong to. However, after this function works,
+emacs will report an error. I don't know elisp, so I can't figure out
+what is going wrong here. If some one know the reason, tell me.
+
+(defadvice show-paren-function
+    (after show-matching-paren-offscreen activate)
+  (interactive)
+  (let* ((cb (char-before (point)))
+	 (matching-text (and cb
+			     (char-equal (char-syntax cb) ?\) )
+			     (blink-matching-open))))
+    (when matching-text (message matching-text))))
+
+[[[[[[[[[[[[[[[[[[[[[[[ using melpa on windows ]]]]]]]]]]]]]]]]]]]]]]]
+
+Emacs will counter network error on windows when you want to install
+some packages from Melpa or GNU.  To resolve this problem, download an
+available verson of gnutls and a w64 version of emacs. Then put the
+bin directory of both together.  Then the emacs command
+"package-list-packages" should work.
