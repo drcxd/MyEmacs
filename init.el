@@ -86,6 +86,9 @@
 (load "init-helm.el")
 ;; ************ spell check **********************
 (setq-default ispell-program-name "aspell")
+;; ************ ace window ***********************
+(global-set-key (kbd "C-x o") 'ace-window)
+(setq aw-keys '(?q ?a ?z ?w ?s ?x ?e ?d ?c))
 ;; ************ custom ***************************
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -94,7 +97,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (sr-speedbar ample-theme badwolf-theme afternoon-theme ahungry-theme company)))
+    (ace-window sr-speedbar ample-theme badwolf-theme afternoon-theme ahungry-theme company)))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
