@@ -1,14 +1,8 @@
-;; (load-file "~/.emacs.d/cedet-1.1/common/cedet.el")
-
 (require 'cc-mode)
 (require 'semantic)
-;; (semantic-load-enable-minimum-features)
-;; (semantic-load-enable-code-helpers)
-;; (semantic-load-enable-gaudy-code-helpers)
 (global-semanticdb-minor-mode 1)
 (global-semantic-idle-scheduler-mode 1)
 (global-semantic-idle-summary-mode 1)
-;; (global-semantic-decoration-mode 1)
 (semantic-mode 1)
 (defun my-semantic-hook()
   ;; add entry here to allow semantic complete extern contents
