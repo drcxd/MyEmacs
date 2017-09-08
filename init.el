@@ -41,11 +41,9 @@
 ;; (load-theme 'afternoon t)
 ;; (load-theme 'badwolf t)
 ;; (load-theme 'ample t)
+(load-theme 'ample-light t)
 ;; (load-theme 'deeper-blue t)
-;; (load-theme 'abyss t)
-(load-theme 'ample-zen t)
-;; (load-theme 'alect-light t)
-;; (load-theme 'alect-dark t)
+;; (load-theme 'ample-zen t)
 ;; ***************** indent & tab ****************
 (load "indent.el")
 ;; ************ auto c++-mode for *.h ************
@@ -67,7 +65,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ample-zen-theme alect-themes abyss-theme ace-window sr-speedbar ample-theme badwolf-theme afternoon-theme ahungry-theme company)))
+    (magit browse-at-remote ample-zen-theme alect-themes abyss-theme ace-window sr-speedbar ample-theme badwolf-theme afternoon-theme ahungry-theme company)))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
