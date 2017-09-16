@@ -19,7 +19,7 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/company-c-headers-20170531.1330/")
 (require 'company-c-headers)
 (add-to-list 'company-backends 'company-c-headers)
-(add-to-list 'company-c-headers-path-system "/usr/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++/")
+(add-to-list 'company-c-headers-path-system "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/")
 ;; ************ hs mode ***********
 (add-hook 'c-mode-common-hook 'hs-minor-mode)
 (add-hook 'c++-mode-common-hook 'hs-minor-mode)
@@ -34,16 +34,17 @@
 			     (char-equal (char-syntax cb) ?\) )
 			     (blink-matching-open))))
     (when matching-text (message matching-text))))
-;; ************ color-threme ***********
+;; ************ color-theme ***********
 (add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/ahungry-theme-1.4.0")
 ;; (setq ahungry-theme-font-settings nil)
-;; (load-theme 'ahungry t)
 ;; (load-theme 'afternoon t)
 ;; (load-theme 'badwolf t)
 ;; (load-theme 'ample t)
-(load-theme 'ample-light t)
-;; (load-theme 'deeper-blue t)
+;; (load-theme 'ample-light t)
 ;; (load-theme 'ample-zen t)
+;; (load-theme 'deeper-blue t)
+;; (load-theme 'busybee t)
+(load-theme 'wheatgrass t)
 ;; ***************** indent & tab ****************
 (load "indent.el")
 ;; ************ auto c++-mode for *.h ************
@@ -63,9 +64,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("1db337246ebc9c083be0d728f8d20913a0f46edc0a00277746ba411c149d7fe5" default)))
  '(package-selected-packages
    (quote
-    (magit browse-at-remote ample-zen-theme alect-themes abyss-theme ace-window sr-speedbar ample-theme badwolf-theme afternoon-theme ahungry-theme company)))
+    (busybee-theme magit browse-at-remote ample-zen-theme ace-window sr-speedbar ample-theme badwolf-theme afternoon-theme company)))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces

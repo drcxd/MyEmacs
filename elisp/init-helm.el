@@ -21,7 +21,7 @@
 (global-set-key (kbd "C-c i")                        'helm-imenu-in-all-buffers)
 (global-set-key (kbd "<f11>")                        nil)
 (global-set-key (kbd "<f11> o")                      'helm-org-agenda-files-headings)
-;; (global-set-key (kbd "C-s")                          'helm-occur)
+(global-set-key (kbd "M-s o")                          'helm-occur)
 (global-set-key (kbd "<f6> h")                       'helm-emms)
 (global-set-key (kbd "C-x b")                        'helm-mini)
 (define-key global-map [remap jump-to-register]      'helm-register)
