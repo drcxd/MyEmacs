@@ -1,4 +1,4 @@
-(global-set-key (kbd "C-x C-s") 'save-and-delete-trail-white)
+;; (global-set-key (kbd "C-x C-s") 'save-and-delete-trail-white)
 (defun save-and-delete-trail-white ()
   (interactive)
   (save-excursion
