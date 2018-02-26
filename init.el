@@ -1,7 +1,5 @@
 ;; ************ directories *******************
 (add-to-list 'load-path "~/.emacs.d/elisp/")
-;; ************ cedet **********************
-;; (load "cedet-init.el")
 ;; ************ melpa **************
 (require 'package)
 (add-to-list 'package-archives
@@ -10,16 +8,13 @@
 ;; ************ close auto backup *************
 (setq make-backup-files nil)
 ;; ************ company mode ******************
-;; (add-to-list 'load-path "~/.emacs.d/elpa/company-0.9.3")
 (require 'company)
-;; (add-hook 'c-mode-common-hook 'company-mode)
-;; (add-hook 'c++-mode-common-hook 'company-mode)
 (add-hook 'after-init-hook 'global-company-mode)
 (setq company-backends (delete 'company-clang company-backends))
-;; (add-to-list 'load-path "~/.emacs.d/elpa/company-c-headers-20170531.1330/")
 (require 'company-c-headers)
 (add-to-list 'company-backends 'company-c-headers)
-;; (add-to-list 'company-c-headers-path-system "/usr/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/")
+;; (require 'company-lsp)
+;; (push 'company-lsp company-backends)
 ;; ************ hs mode ***********
 (add-hook 'c-mode-common-hook 'hs-minor-mode)
 (add-hook 'c++-mode-common-hook 'hs-minor-mode)
@@ -54,3 +49,8 @@
 (setq aw-keys '(?q ?a ?z ?w ?s ?x ?e ?d ?c))
 ;; ************ my function **********************
 (load "my_func.el")
+;; ************ fly check ************************
+(add-hook 'after-init-hook #'global-flycheck-mode)
+;; ************ cquery ***************************
+;; (setq cquery-executable "~/Downloads/cquery/bin/cquery")
+;; (require 'cquery)
