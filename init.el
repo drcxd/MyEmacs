@@ -40,3 +40,22 @@
 (load "my_func.el")
 ;; ************ fly check ************************
 ;; (add-hook 'after-init-hook #'global-flycheck-mode)
+;; ************ asm mode *************************
+(defun my-asm-mode-hook()
+  (local-unset-key (vector asm-comment-char))
+  (setq tab-always-indent (default-value 'tab-always-indent)))
+(add-hook 'asm-mode-hook 'my-asm-mode-hook)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (nasm-mode ace-window helm mic-paren company-c-headers company))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
