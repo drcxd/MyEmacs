@@ -40,5 +40,4 @@
 (load "my_func.el")
 ;; ************ visual ***************************
 (menu-bar-mode 0)
-(global-hl-line-mode 1)
 
