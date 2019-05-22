@@ -27,7 +27,8 @@
 (setq c-default-style "microsoft")
 ;; my original setting
 (setq-default indent-tabs-mode nil)
-(setq default-tab-width 4)
+;; (setq default-tab-width 4)
+(set-default tab-width 4)
 (setq-default c-basic-offset 4)
 ;; (defun my-c-mode-hook ()
 ;;   (c-set-offset 'innamespace 0))
