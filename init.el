@@ -38,5 +38,6 @@
 (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 ;; ************ my function **********************
 (load "my_func.el")
-;; ************ fly check ************************
-;; (add-hook 'after-init-hook #'global-flycheck-mode)
+;; ************ visual ***************************
+(menu-bar-mode 0)
+
