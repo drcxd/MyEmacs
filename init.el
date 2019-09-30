@@ -6,3 +6,4 @@
 (require-init 'init-helm)
 (require-init 'init-misc)
 (require-init 'init-func)
+(require-init 'init-linum)
