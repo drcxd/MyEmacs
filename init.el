@@ -1,5 +1,5 @@
 (defmacro require-init (pkg)
-  `(load (file-truename (foramt "~/.emacs.d/lisp/%s", pkg)) t t))
+  `(load (file-truename (format "~/.emacs.d/lisp/%s", pkg)) t t))
 
 (require-init 'init-elpa)
 (require-init 'init-company)

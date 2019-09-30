@@ -66,4 +66,4 @@
   (defadvice linum-schedule (around my-linum-schedule () activate)
     (run-with-idle-timer 1 nil #'linum-update-current))))
 
-(provide init-linum)
+(provide 'init-linum)
