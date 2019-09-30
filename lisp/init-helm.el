@@ -34,3 +34,5 @@
 ;; (define-key global-map (kbd "M-g i")                 'helm-gid)
 ;; (define-key global-map (kbd "C-x r p")               'helm-projects-history)
 ;; (define-key global-map (kbd "C-x r c")               'helm-addressbook-bookmarks)
+
+(provide 'init-helm)

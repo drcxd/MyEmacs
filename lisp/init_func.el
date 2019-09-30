@@ -9,3 +9,5 @@
         (set-mark-command 0))
     )
   )
+
+(provide 'init-func)
